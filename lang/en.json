@@ -1,0 +1,9 @@
+{
+  "menu": {
+    "home": "Home",
+    "service": "Services",
+    "project": "Project",
+    "resume": "Resume",
+    "contact": "Contact"
+  }
+}

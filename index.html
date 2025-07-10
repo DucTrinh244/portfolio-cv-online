@@ -24,6 +24,190 @@
     <!-- custom css -->
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
+  <style>
+    /* Custom Language Switcher Styles */
+    .language-switcher {
+      position: relative;
+    }
+
+    .custom-select {
+      position: relative;
+      display: inline-block;
+      min-width: 150px;
+    }
+
+    .custom-select select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 10px 40px 10px 15px;
+      border: none;
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+    }
+
+    .custom-select select:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    .custom-select select:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);
+    }
+
+    .custom-select::after {
+      content: "\f107";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: white;
+      pointer-events: none;
+      transition: transform 0.3s ease;
+    }
+
+    .custom-select:hover::after {
+      transform: translateY(-50%) rotate(180deg);
+    }
+
+    /* Alternative Dropdown Style */
+    .language-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: white;
+      border: 2px solid #e9ecef;
+      padding: 8px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 14px;
+      font-weight: 500;
+      color: #495057;
+    }
+
+    .dropdown-btn:hover {
+      border-color: #667eea;
+      background: #f8f9ff;
+    }
+
+    .dropdown-btn.active {
+      border-color: #667eea;
+      background: #667eea;
+      color: white;
+    }
+
+    .dropdown-menu-custom {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      border: 1px solid #e9ecef;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      margin-top: 5px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .dropdown-menu-custom.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-item-custom {
+      padding: 10px 15px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dropdown-item-custom:hover {
+      background: #f8f9ff;
+    }
+
+    .dropdown-item-custom.active {
+      background: #667eea;
+      color: white;
+    }
+
+    .flag-icon {
+      width: 20px;
+      height: 15px;
+      border-radius: 2px;
+    }
+
+    /* Hamburger Menu */
+    .tmp-side-collups-area {
+      display: flex;
+      align-items: center;
+    }
+
+    .hamberger-menu {
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: #495057;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .hamberger-menu:hover {
+      color: #667eea;
+      transform: scale(1.1);
+    }
+
+    /* Demo Variants */
+    .demo-section {
+      margin-bottom: 40px;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .demo-title {
+      color: #495057;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #e9ecef;
+    }
+
+    @media (max-width: 768px) {
+      .tmp-header-right {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .social-share-wrapper {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
 
   <body>
     <!-- tpm-header-area start -->
@@ -53,22 +237,52 @@
                 <nav class="navbar-example2 onepagenav">
                   <ul class="tmp-mainmenu nav nav-pills">
                     <li class="current">
-                      <a class="smoth-animation" href="#home">Home</a>
+                      <a
+                        class="smoth-animation"
+                        href="#home"
+                        data-i18n="menu.home"
+                        >Home</a
+                      >
                     </li>
                     <li class="nav-item">
-                      <a class="smoth-animation" href="#service">Services</a>
+                      <a
+                        class="smoth-animation"
+                        href="#service"
+                        data-i18n="menu.service"
+                        >Services</a
+                      >
                     </li>
                     <li class="nav-item">
-                      <a class="smoth-animation" href="#about">About</a>
+                      <a
+                        class="smoth-animation"
+                        href="#about"
+                        data-i18n="menu.about"
+                        >About</a
+                      >
                     </li>
                     <li class="nav-item">
-                      <a class="smoth-animation" href="#resume">Resume</a>
+                      <a
+                        class="smoth-animation"
+                        href="#resume"
+                        data-i18n="menu.resume"
+                        >Resume</a
+                      >
                     </li>
                     <li class="nav-item">
-                      <a class="smoth-animation" href="#portfolio">Portfolio</a>
+                      <a
+                        class="smoth-animation"
+                        href="#portfolio"
+                        data-i18n="menu.project"
+                        >Portfolio</a
+                      >
                     </li>
                     <li class="nav-item">
-                      <a class="smoth-animation" href="#contacts">Contact</a>
+                      <a
+                        class="smoth-animation"
+                        href="#contacts"
+                        data-i18n="menu.contact"
+                        >Contact</a
+                      >
                     </li>
                   </ul>
                 </nav>
@@ -81,6 +295,13 @@
                     <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
                     <a href="#"><i class="fa-brands fa-twitter"></i></a>
                     <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                  </div>
+                  <div class="language-switcher d-inline-block me-3">
+                    <select id="language" class="form-select form-select-sm">
+                      <option value="en">English</option>
+                      <option value="vi">Tiếng Việt</option>
+                      <option value="jp">日本語</option>
+                    </select>
                   </div>
                 </div>
 
@@ -124,11 +345,40 @@
           </div>
 
           <ul class="tmp-mainmenu onepagenav-click">
-            <li><a class="smoth-animation" href="#home">Home</a></li>
-            <li><a class="smoth-animation" href="#service">Services</a></li>
-            <li><a class="smoth-animation" href="#portfolio">Portfolio</a></li>
-            <li><a class="smoth-animation" href="#resume">Resume</a></li>
-            <li><a class="smoth-animation" href="#contacts">Contact</a></li>
+            <li>
+              <a class="smoth-animation" href="#home" data-i18n="menu.home"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                class="smoth-animation"
+                href="#service"
+                data-i18n="menu.service"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a
+                class="smoth-animation"
+                href="#portfolio"
+                data-i18n="menu.project"
+                >Project</a
+              >
+            </li>
+            <li>
+              <a class="smoth-animation" href="#resume" data-i18n="menu.resume"
+                >Resume</a
+              >
+            </li>
+            <li>
+              <a
+                class="smoth-animation"
+                href="#contacts"
+                data-i18n="menu.contact"
+                >Contact</a
+              >
+            </li>
           </ul>
 
           <!-- social sharea area -->
@@ -154,11 +404,11 @@
           <div class="row align-items-center">
             <div class="col-lg-6 order-lg-2">
               <div class="banner-right-content">
-                <img
+                <!-- <img
                   class="tmp-scroll-trigger tmp-zoom-in animation-order-1"
                   src="assets/images/banner/me.png"
                   alt="banner-img"
-                />
+                /> -->
                 <h2 class="banner-big-text-1 up-down">WEB DESIGNER</h2>
                 <h2 class="banner-big-text-2 up-down-2">WEB DESIGNER</h2>
               </div>
@@ -2024,6 +2274,26 @@
     </div>
     <!-- progress area end -->
 
+    <script>
+      function getValueByPath(obj, path) {
+        return path.split(".").reduce((o, k) => (o || {})[k], obj);
+      }
+
+      document
+        .getElementById("language")
+        .addEventListener("change", function () {
+          const lang = this.value;
+          fetch(`lang/${lang}.json`)
+            .then((res) => res.json())
+            .then((data) => {
+              document.querySelectorAll("[data-i18n]").forEach((el) => {
+                const key = el.getAttribute("data-i18n");
+                const value = getValueByPath(data, key);
+                if (value) el.textContent = value;
+              });
+            });
+        });
+    </script>
     <script src="assets/js/vendor/modernizer.js"></script>
     <script src="assets/js/vendor/jquery.js"></script>
     <script src="assets/js/vendor/jquery-ui.min.js"></script>

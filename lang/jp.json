@@ -1,0 +1,10 @@
+{
+  "menu": {
+    "home": "ホーム",
+    "service": "サービス",
+    "project": "プロジェクト",
+    "about": "アバウト",
+    "resume": "履歴書",
+    "contact": "お問い合わせ"
+  }
+}
