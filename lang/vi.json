@@ -6,5 +6,19 @@
     "about": "Giới thiệu",
     "resume": "Lý lịch",
     "contact": "Liên hệ"
+  },
+  "home": {
+    "text-banner": "THIẾT KẾ WEB",
+    "sub-title": "XIN CHÀO",
+    "title": "Tôi là Hoàng Đức Trình",
+    "header-caption": {
+      "text-1": "Nhà thiết kế web.",
+      "text-2": "Nhà phát triển web.",
+      "text-3": "Kỹ sư cầu nối.",
+      "text-4": "Quản lý dự án.",
+      "text-5": "Làm tự do."
+    },
+    "des-title": "  Bộ sưu tập cá nhân là một tập hợp các công việc, thành tựu và kỹ năng của bạn, làm nổi bật khả năng và sự phát triển chuyên môn của bạn. Nó phục vụ như",
+    "button-text": "Xem Hồ sơ"
   }
 }

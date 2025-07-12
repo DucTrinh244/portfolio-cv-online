@@ -3,7 +3,22 @@
     "home": "Home",
     "service": "Services",
     "project": "Project",
+    "about": "About",
     "resume": "Resume",
     "contact": "Contact"
+  },
+  "home": {
+    "text-banner": "WEB DESIGNER",
+    "sub-title": "HELLO",
+    "title": "I'm Hoang Duc Trinh",
+    "header-caption": {
+      "text-1": "Web Designer.",
+      "text-2": "Web Developer.",
+      "text-3": "Bridge System Engineer.",
+      "text-4": "Project Management.",
+      "text-5": "Freelancer."
+    },
+    "des-title": "  A personal portfolio is a collection of your work,achievements, and skills that highlights your abilities and professional growth. It serves as",
+    "button-text": "View Portfolio"
   }
 }
